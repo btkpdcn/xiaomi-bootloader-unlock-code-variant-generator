@@ -1,4 +1,15 @@
 
+# Xiaomi Bootloader Unlock Code Variant Generator
+
+## 理论依据
+本工具的思想源自 **RSA 三老 1978 年的原始论文**：
+> *A Method for Obtaining Digital Signatures and Public-Key Cryptosystems* (Communications of the ACM, Vol. 21, No. 2, Feb 1978)
+
+论文明确定义了签名验证的本质：只要满足 `M ≡ S^e mod n`，签名即为合法，**不存在“唯一 S”或“范围校验”的数学约束**。
+本工具正是利用这一底层性质，对已授权的解锁码进行同余变换（`S' = S + k*N`），生成无限个可通过公验的等价解锁码。
+
+> 注意：本项目仅为学术研究用途，请勿用于非法用途。
+
 About This Tool
  
 This tool is used to generate many valid bootloader unlock codes for Xiaomi devices.
